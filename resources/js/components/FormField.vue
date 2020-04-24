@@ -19,7 +19,10 @@
             tools.header = {
                 class: Header,
                 config: {
-                    placeholder: self.field.toolSettings.header.placeholder
+                    placeholder: self.field.toolSettings.header.config || {},
+                },
+                toolbox: {
+                    title: self.field.toolSettings.header.title,
                 },
                 shortcut: self.field.toolSettings.header.shortcut
             }
