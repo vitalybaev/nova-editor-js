@@ -18,9 +18,7 @@
 
             tools.header = {
                 class: Header,
-                config: {
-                    placeholder: self.field.toolSettings.header.config || {},
-                },
+                config: self.field.toolSettings.header.config || {},
                 toolbox: {
                     title: self.field.toolSettings.header.title,
                 },
@@ -36,7 +34,10 @@
             tools.list = {
                 class: List,
                 inlineToolbar: self.field.toolSettings.list.inlineToolbar,
-                shortcut: self.field.toolSettings.list.shortcut
+                shortcut: self.field.toolSettings.list.shortcut,
+                toolbox: {
+                    title: self.field.toolSettings.list.title,
+                },
             }
         }
     }
@@ -63,7 +64,10 @@
                 class: LinkTool,
                 config: {
                     endpoint: self.field.fetchUrlEndpoint,
-                }
+                },
+                toolbox: {
+                    title: self.field.toolSettings.link.title,
+                },
             }
         }
     }
@@ -82,7 +86,10 @@
                     additionalRequestHeaders: {
                         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                     }
-                }
+                },
+                toolbox: {
+                    title: self.field.toolSettings.image.title,
+                },
             }
         }
     }
@@ -105,7 +112,10 @@
             tools.checklist = {
                 class: Checklist,
                 inlineToolbar: self.field.toolSettings.checklist.inlineToolbar,
-                shortcut: self.field.toolSettings.checklist.shortcut
+                shortcut: self.field.toolSettings.checklist.shortcut,
+                toolbox: {
+                    title: self.field.toolSettings.checklist.title,
+                },
             }
         }
     }
@@ -116,7 +126,10 @@
 
             tools.marker = {
                 class: Marker,
-                shortcut: self.field.toolSettings.marker.shortcut
+                shortcut: self.field.toolSettings.marker.shortcut,
+                toolbox: {
+                    title: self.field.toolSettings.marker.title,
+                },
             }
         }
     }
@@ -127,6 +140,9 @@
 
             tools.delimiter = {
                 class: Delimiter,
+                toolbox: {
+                    title: self.field.toolSettings.delimiter.title,
+                },
             }
         }
     }
@@ -138,6 +154,9 @@
             tools.table = {
                 class: Table,
                 inlineToolbar: self.field.toolSettings.table.inlineToolbar,
+                toolbox: {
+                    title: self.field.toolSettings.table.title,
+                },
             }
         }
     }
@@ -150,6 +169,9 @@
                 class: Raw,
                 config: {
                     placeholder: self.field.toolSettings.raw.placeholder,
+                },
+                toolbox: {
+                    title: self.field.toolSettings.raw.title,
                 },
             }
         }
